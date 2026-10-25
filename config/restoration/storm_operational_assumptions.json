@@ -1,0 +1,72 @@
+{
+  "assumptions_version": "storm_ops_v1",
+  "disclaimer": "Storm severity and access settings are simulated operational overlays. They adjust illustrative work scope (quantity) and when crews may begin work. They do not change AEP workbook direct person-hours or the 4.5 indirect labor multiplier.",
+  "damage_severity": {
+    "minor": {
+      "label": "Minor",
+      "description": "Single-unit replacement scope per damaged component (baseline illustrative storm).",
+      "quantity_by_repair_type": {
+        "pole_replacement": 1.0,
+        "wire_replacement": 1.0,
+        "transformer_replacement": 1.0,
+        "switch_replacement": 1.0
+      }
+    },
+    "moderate": {
+      "label": "Moderate",
+      "description": "Expanded scope: additional spans, hardware, or assembly work on the same component (quantity only).",
+      "quantity_by_repair_type": {
+        "pole_replacement": 1.25,
+        "wire_replacement": 1.5,
+        "transformer_replacement": 1.25,
+        "switch_replacement": 1.1
+      }
+    },
+    "major": {
+      "label": "Major",
+      "description": "Heavy storm damage scope: multiple spans/units counted against the same AEP CU averages (quantity only).",
+      "quantity_by_repair_type": {
+        "pole_replacement": 1.5,
+        "wire_replacement": 2.0,
+        "transformer_replacement": 1.5,
+        "switch_replacement": 1.25
+      }
+    }
+  },
+  "access_conditions": {
+    "normal": {
+      "label": "Normal",
+      "description": "Roads open; crews begin when available.",
+      "crew_mobilization_hours": 0,
+      "site_access_hours_by_repair_type": {
+        "pole_replacement": 0,
+        "wire_replacement": 0,
+        "transformer_replacement": 0,
+        "switch_replacement": 0
+      }
+    },
+    "difficult": {
+      "label": "Difficult",
+      "description": "Debris, flooding, or limited access delays safe work start (not added to AEP install/removal hours).",
+      "crew_mobilization_hours": 12,
+      "site_access_hours_by_repair_type": {
+        "pole_replacement": 8,
+        "wire_replacement": 6,
+        "transformer_replacement": 4,
+        "switch_replacement": 4
+      }
+    },
+    "restricted": {
+      "label": "Restricted",
+      "description": "Blocked routes or unsafe conditions; extended mobilization and per-site access waits.",
+      "crew_mobilization_hours": 36,
+      "site_access_hours_by_repair_type": {
+        "pole_replacement": 24,
+        "wire_replacement": 18,
+        "transformer_replacement": 12,
+        "switch_replacement": 12
+      }
+    }
+  },
+  "mobilization_override_note": "Optional extra mobilization hours add to crew_mobilization_hours (simulated staging delay)."
+}

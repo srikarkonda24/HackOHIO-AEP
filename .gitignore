@@ -1,12 +1,31 @@
-﻿node_modules/
-.env
-.env.*
-__pycache__/
+﻿# AEP competition data (do not publish)
+data/raw/
+data/processed/
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
 .venv/
 venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Node.js
+node_modules/
+.next/
+out/
 dist/
-build/
+frontend/public/maplibre/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
 .DS_Store
-*.pyc
-.idea/
-.vscode/
+Thumbs.db
+*.pem

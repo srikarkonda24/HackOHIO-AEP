@@ -1,0 +1,86 @@
+[
+  {
+    "location": "vinton_customer",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.288572519&longitude=-79.736609841&start_date=2022-01-01&end_date=2026-08-31&daily=wind_gusts_10m_max%2Cprecipitation_sum%2Ctemperature_2m_min%2Csnowfall_sum&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York&models=era5",
+    "model": "ERA5",
+    "timezone": "America/New_York",
+    "coordinates_requested": [
+      37.288572519,
+      -79.736609841
+    ],
+    "coordinates_returned": [
+      37.25,
+      -79.75
+    ],
+    "daily_units": {
+      "time": "iso8601",
+      "wind_gusts_10m_max": "mp/h",
+      "precipitation_sum": "inch",
+      "temperature_2m_min": "\u00b0F",
+      "snowfall_sum": "inch"
+    }
+  },
+  {
+    "location": "west_area",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.25&longitude=-80.12&start_date=2022-01-01&end_date=2026-08-31&daily=wind_gusts_10m_max%2Cprecipitation_sum%2Ctemperature_2m_min%2Csnowfall_sum&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York&models=era5",
+    "model": "ERA5",
+    "timezone": "America/New_York",
+    "coordinates_requested": [
+      37.25,
+      -80.12
+    ],
+    "coordinates_returned": [
+      37.25,
+      -80.0
+    ],
+    "daily_units": {
+      "time": "iso8601",
+      "wind_gusts_10m_max": "mp/h",
+      "precipitation_sum": "inch",
+      "temperature_2m_min": "\u00b0F",
+      "snowfall_sum": "inch"
+    }
+  },
+  {
+    "location": "north_area",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.42&longitude=-79.85&start_date=2022-01-01&end_date=2026-08-31&daily=wind_gusts_10m_max%2Cprecipitation_sum%2Ctemperature_2m_min%2Csnowfall_sum&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York&models=era5",
+    "model": "ERA5",
+    "timezone": "America/New_York",
+    "coordinates_requested": [
+      37.42,
+      -79.85
+    ],
+    "coordinates_returned": [
+      37.5,
+      -79.75
+    ],
+    "daily_units": {
+      "time": "iso8601",
+      "wind_gusts_10m_max": "mp/h",
+      "precipitation_sum": "inch",
+      "temperature_2m_min": "\u00b0F",
+      "snowfall_sum": "inch"
+    }
+  },
+  {
+    "location": "south_area",
+    "source_url": "https://archive-api.open-meteo.com/v1/archive?latitude=37.08&longitude=-79.88&start_date=2022-01-01&end_date=2026-08-31&daily=wind_gusts_10m_max%2Cprecipitation_sum%2Ctemperature_2m_min%2Csnowfall_sum&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=America%2FNew_York&models=era5",
+    "model": "ERA5",
+    "timezone": "America/New_York",
+    "coordinates_requested": [
+      37.08,
+      -79.88
+    ],
+    "coordinates_returned": [
+      37.0,
+      -80.0
+    ],
+    "daily_units": {
+      "time": "iso8601",
+      "wind_gusts_10m_max": "mp/h",
+      "precipitation_sum": "inch",
+      "temperature_2m_min": "\u00b0F",
+      "snowfall_sum": "inch"
+    }
+  }
+]

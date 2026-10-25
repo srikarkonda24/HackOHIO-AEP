@@ -1,0 +1,13 @@
+{
+  "total_reports": 1659,
+  "distinct_report_dates": 55,
+  "distinct_date_grid_pairs": 106,
+  "feb_2025_reports": 1254,
+  "per_damage_counts": {
+    "Damaged Wire": 861,
+    "Damaged Switch": 357,
+    "Damaged Pole": 355,
+    "Damaged Equipment": 81,
+    "Damaged Light": 5
+  }
+}

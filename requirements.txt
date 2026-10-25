@@ -1,0 +1,9 @@
+pyshp
+fastapi
+uvicorn
+pytest
+httpx
+openpyxl
+pandas
+python-dotenv
+openai

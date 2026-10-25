@@ -1,0 +1,81 @@
+{
+  "network_version": "illustrative_radial_v1",
+  "title": "Illustrative Restoration Network",
+  "disclaimer": "Fictional radial topology for demo scheduling. Facility links are not verified AEP GIS connections.",
+  "source_node_id": "SRC",
+  "components": [
+    {
+      "id": "A",
+      "label": "Main pole / upstream supply",
+      "repair_type": "pole_replacement",
+      "aep_damage_category_proxy": "Damaged Pole"
+    },
+    {
+      "id": "B",
+      "label": "Hospital branch wire",
+      "repair_type": "wire_replacement",
+      "aep_damage_category_proxy": "Damaged Wire"
+    },
+    {
+      "id": "C",
+      "label": "Residential transformer",
+      "repair_type": "transformer_replacement",
+      "aep_damage_category_proxy": "Damaged Equipment"
+    },
+    {
+      "id": "D",
+      "label": "Emergency-services switch",
+      "repair_type": "switch_replacement",
+      "aep_damage_category_proxy": "Damaged Switch"
+    }
+  ],
+  "edges": [
+    { "from": "SRC", "to": "A", "requires_component": "A" },
+    { "from": "A", "to": "B", "requires_component": "B" },
+    { "from": "A", "to": "C", "requires_component": "C" },
+    { "from": "A", "to": "D", "requires_component": "D" },
+    { "from": "A", "to": "RES2", "requires_component": null },
+    { "from": "B", "to": "HOSPITAL", "requires_component": null },
+    { "from": "C", "to": "RES1", "requires_component": null },
+    { "from": "D", "to": "FIRE", "requires_component": null }
+  ],
+  "customer_groups": [
+    {
+      "id": "HOSPITAL",
+      "label": "Hospital",
+      "priority_tier": 1,
+      "simulated_customer_count": 1,
+      "count_assumption": "Single critical facility placeholder (not AEP customer count)"
+    },
+    {
+      "id": "FIRE",
+      "label": "Fire station",
+      "priority_tier": 2,
+      "simulated_customer_count": 1,
+      "count_assumption": "Single critical facility placeholder"
+    },
+    {
+      "id": "RES1",
+      "label": "Residential Group 1",
+      "priority_tier": 3,
+      "simulated_customer_count": 120,
+      "count_assumption": "Hypothetical group size for weighted restoration metric"
+    },
+    {
+      "id": "RES2",
+      "label": "Residential Group 2",
+      "priority_tier": 3,
+      "simulated_customer_count": 80,
+      "count_assumption": "Hypothetical group size for weighted restoration metric"
+    }
+  ],
+  "required_components_by_group": {
+    "HOSPITAL": ["A", "B"],
+    "FIRE": ["A", "D"],
+    "RES1": ["A", "C"],
+    "RES2": ["A"]
+  },
+  "scale_context": {
+    "note": "Demo recloser dependency index reports 2811 premises for a nearby protective device; illustrative counts above are not that measurement."
+  }
+}

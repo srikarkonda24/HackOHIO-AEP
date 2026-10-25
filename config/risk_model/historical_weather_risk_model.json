@@ -1,0 +1,579 @@
+{
+  "model_version": "historical_weather_informed_v1",
+  "storm_window": {
+    "definition": "three_day_summary",
+    "description": "Scenario inputs are interpreted as a 3-day storm window summary: maximum gust, summed liquid precipitation, minimum temperature, and summed snowfall \u2014 matching the historical ARCOS enrichment analysis."
+  },
+  "study_region": "AEP southwest Virginia (four ERA5 sample grid points)",
+  "weather_points": [
+    "vinton_customer",
+    "west_area",
+    "north_area",
+    "south_area"
+  ],
+  "default_weather_point_for_unknown_coords": "vinton_customer",
+  "data_summary": {
+    "total_reports": 1659,
+    "distinct_report_dates": 55,
+    "distinct_date_grid_pairs": 106,
+    "feb_2025_reports": 1254,
+    "per_damage_counts": {
+      "Damaged Wire": 861,
+      "Damaged Switch": 357,
+      "Damaged Pole": 355,
+      "Damaged Equipment": 81,
+      "Damaged Light": 5
+    }
+  },
+  "pooled_three_day_percentiles": {
+    "max_wind_gust_mph": {
+      "p25": 21.0,
+      "p50": 27.5,
+      "p75": 34.2,
+      "p90": 40.5,
+      "p95": 44.7,
+      "count": 6808
+    },
+    "total_precipitation_in": {
+      "p25": 0.004,
+      "p50": 0.11,
+      "p75": 0.4268,
+      "p90": 0.9459,
+      "p95": 1.3738,
+      "count": 6808
+    },
+    "min_temperature_f": {
+      "p25": 31.2,
+      "p50": 43.8,
+      "p75": 58.9,
+      "p90": 66.7,
+      "p95": 69.0,
+      "count": 6808
+    },
+    "snowfall_in": {
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 0.0,
+      "p95": 0.0866,
+      "count": 6808
+    }
+  },
+  "per_location_three_day_percentiles": {
+    "vinton_customer": {
+      "three_day_window_percentiles": {
+        "max_wind_gust_mph": {
+          "p25": 20.6,
+          "p50": 26.2,
+          "p75": 32.9,
+          "p90": 38.7,
+          "p95": 42.5,
+          "count": 1702
+        },
+        "total_precipitation_in": {
+          "p25": 0.004,
+          "p50": 0.094,
+          "p75": 0.402,
+          "p90": 0.929,
+          "p95": 1.342,
+          "count": 1702
+        },
+        "min_temperature_f": {
+          "p25": 31.725,
+          "p50": 44.2,
+          "p75": 59.7,
+          "p90": 67.99,
+          "p95": 69.6,
+          "count": 1702
+        },
+        "snowfall_in": {
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "p95": 0.076,
+          "count": 1702
+        }
+      }
+    },
+    "west_area": {
+      "three_day_window_percentiles": {
+        "max_wind_gust_mph": {
+          "p25": 21.9,
+          "p50": 28.2,
+          "p75": 35.1,
+          "p90": 41.8,
+          "p95": 45.4,
+          "count": 1702
+        },
+        "total_precipitation_in": {
+          "p25": 0.004,
+          "p50": 0.102,
+          "p75": 0.426,
+          "p90": 0.933,
+          "p95": 1.3772,
+          "count": 1702
+        },
+        "min_temperature_f": {
+          "p25": 31.4,
+          "p50": 43.4,
+          "p75": 58.3,
+          "p90": 66.6,
+          "p95": 68.4,
+          "count": 1702
+        },
+        "snowfall_in": {
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "p95": 0.0976,
+          "count": 1702
+        }
+      }
+    },
+    "north_area": {
+      "three_day_window_percentiles": {
+        "max_wind_gust_mph": {
+          "p25": 21.5,
+          "p50": 28.0,
+          "p75": 34.7,
+          "p90": 40.9,
+          "p95": 45.2,
+          "count": 1702
+        },
+        "total_precipitation_in": {
+          "p25": 0.008,
+          "p50": 0.122,
+          "p75": 0.433,
+          "p90": 0.949,
+          "p95": 1.3389,
+          "count": 1702
+        },
+        "min_temperature_f": {
+          "p25": 29.525,
+          "p50": 41.9,
+          "p75": 57.075,
+          "p90": 65.29,
+          "p95": 67.795,
+          "count": 1702
+        },
+        "snowfall_in": {
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "p95": 0.0976,
+          "count": 1702
+        }
+      }
+    },
+    "south_area": {
+      "three_day_window_percentiles": {
+        "max_wind_gust_mph": {
+          "p25": 21.3,
+          "p50": 27.5,
+          "p75": 34.0,
+          "p90": 39.6,
+          "p95": 44.1,
+          "count": 1702
+        },
+        "total_precipitation_in": {
+          "p25": 0.008,
+          "p50": 0.1205,
+          "p75": 0.449,
+          "p90": 1.0116,
+          "p95": 1.4838,
+          "count": 1702
+        },
+        "min_temperature_f": {
+          "p25": 32.7,
+          "p50": 44.8,
+          "p75": 60.175,
+          "p90": 67.59,
+          "p95": 69.695,
+          "count": 1702
+        },
+        "snowfall_in": {
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0,
+          "p95": 0.065,
+          "count": 1702
+        }
+      }
+    }
+  },
+  "enrichment_analysis_thresholds": {
+    "max_wind_gust_mph_gte": 40.5,
+    "total_precipitation_in_gte": 0.9464999999999996,
+    "min_temperature_f_lte": 32.0,
+    "snowfall_in_gt": 0.0,
+    "source": "three_day_weather_damage_enrichment.csv (top-decile / freezing / any-snow conditions)"
+  },
+  "classification_rule": {
+    "name": "hazard_tier_with_wind_floor",
+    "calm_weather_guard": {
+      "requires_all": [
+        "max_wind_gust_mph < pooled_p25_wind",
+        "total_precipitation_in < pooled_p25_precip",
+        "snowfall_in == 0",
+        "min_temperature_f > 32"
+      ],
+      "relative_risk": "LOW"
+    },
+    "hazard_points": {
+      "severe_wind_gte_enrichment_threshold": 3,
+      "moderate_wind_gte_p75": 1,
+      "severe_precip_gte_enrichment_threshold": 2,
+      "moderate_precip_gte_p50": 1,
+      "freezing_min_temp_lte_32f": 1,
+      "snowfall_in_gt_0_with_freezing_or_moderate_wind": 2,
+      "snowfall_in_gt_0_alone": 1
+    },
+    "bands_from_hazard_score": {
+      "LOW": "score <= 1",
+      "MEDIUM": "2 <= score <= 4",
+      "HIGH": "score >= 5"
+    },
+    "wind_monotonicity_floor": {
+      "gte_enrichment_wind_threshold": "MEDIUM",
+      "gte_p95_wind": "HIGH"
+    },
+    "sparse_evidence": {
+      "min_enrichment_matching_pairs_for_driver_narrative": 10,
+      "categories_with_low_support": [
+        "Damaged Light"
+      ]
+    }
+  },
+  "damage_category_impact_assumptions": {
+    "Damaged Wire": "HIGH",
+    "Damaged Pole": "MEDIUM",
+    "Damaged Switch": "MEDIUM",
+    "Damaged Equipment": "MEDIUM",
+    "Damaged Light": "LOW",
+    "_note": "Qualitative service-interruption modeling assumptions only; not measured outage rates."
+  },
+  "enrichment_table": [
+    {
+      "feature": "Wind gust (3-day max)",
+      "threshold": "40.5",
+      "condition": ">=",
+      "damage_group": "all types",
+      "damage_grid_dates": "106",
+      "matching_damage_grid_dates": "45",
+      "matching_share": "0.4245",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1004",
+      "enrichment": "4.23",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Wind gust (3-day max)",
+      "threshold": "40.5",
+      "condition": ">=",
+      "damage_group": "Damaged Wire",
+      "damage_grid_dates": "91",
+      "matching_damage_grid_dates": "41",
+      "matching_share": "0.4505",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1004",
+      "enrichment": "4.49",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Wind gust (3-day max)",
+      "threshold": "40.5",
+      "condition": ">=",
+      "damage_group": "Damaged Pole",
+      "damage_grid_dates": "64",
+      "matching_damage_grid_dates": "27",
+      "matching_share": "0.4219",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1004",
+      "enrichment": "4.204",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Wind gust (3-day max)",
+      "threshold": "40.5",
+      "condition": ">=",
+      "damage_group": "Damaged Switch",
+      "damage_grid_dates": "47",
+      "matching_damage_grid_dates": "22",
+      "matching_share": "0.4681",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1004",
+      "enrichment": "4.664",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Wind gust (3-day max)",
+      "threshold": "40.5",
+      "condition": ">=",
+      "damage_group": "Damaged Equipment",
+      "damage_grid_dates": "31",
+      "matching_damage_grid_dates": "14",
+      "matching_share": "0.4516",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1004",
+      "enrichment": "4.5",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Wind gust (3-day max)",
+      "threshold": "40.5",
+      "condition": ">=",
+      "damage_group": "Damaged Light",
+      "damage_grid_dates": "4",
+      "matching_damage_grid_dates": "1",
+      "matching_share": "0.25",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1004",
+      "enrichment": "2.491",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Precipitation (3-day sum)",
+      "threshold": "0.9464999999999996",
+      "condition": ">=",
+      "damage_group": "all types",
+      "damage_grid_dates": "106",
+      "matching_damage_grid_dates": "45",
+      "matching_share": "0.4245",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1001",
+      "enrichment": "4.243",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Precipitation (3-day sum)",
+      "threshold": "0.9464999999999996",
+      "condition": ">=",
+      "damage_group": "Damaged Wire",
+      "damage_grid_dates": "91",
+      "matching_damage_grid_dates": "44",
+      "matching_share": "0.4835",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1001",
+      "enrichment": "4.832",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Precipitation (3-day sum)",
+      "threshold": "0.9464999999999996",
+      "condition": ">=",
+      "damage_group": "Damaged Pole",
+      "damage_grid_dates": "64",
+      "matching_damage_grid_dates": "37",
+      "matching_share": "0.5781",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1001",
+      "enrichment": "5.778",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Precipitation (3-day sum)",
+      "threshold": "0.9464999999999996",
+      "condition": ">=",
+      "damage_group": "Damaged Switch",
+      "damage_grid_dates": "47",
+      "matching_damage_grid_dates": "29",
+      "matching_share": "0.617",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1001",
+      "enrichment": "6.167",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Precipitation (3-day sum)",
+      "threshold": "0.9464999999999996",
+      "condition": ">=",
+      "damage_group": "Damaged Equipment",
+      "damage_grid_dates": "31",
+      "matching_damage_grid_dates": "22",
+      "matching_share": "0.7097",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1001",
+      "enrichment": "7.093",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Precipitation (3-day sum)",
+      "threshold": "0.9464999999999996",
+      "condition": ">=",
+      "damage_group": "Damaged Light",
+      "damage_grid_dates": "4",
+      "matching_damage_grid_dates": "3",
+      "matching_share": "0.75",
+      "weather_days": "6816",
+      "weather_matching_share": "0.1001",
+      "enrichment": "7.496",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Any snowfall (3-day sum)",
+      "threshold": "0.0",
+      "condition": ">",
+      "damage_group": "all types",
+      "damage_grid_dates": "106",
+      "matching_damage_grid_dates": "23",
+      "matching_share": "0.217",
+      "weather_days": "6816",
+      "weather_matching_share": "0.081",
+      "enrichment": "2.679",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Any snowfall (3-day sum)",
+      "threshold": "0.0",
+      "condition": ">",
+      "damage_group": "Damaged Wire",
+      "damage_grid_dates": "91",
+      "matching_damage_grid_dates": "23",
+      "matching_share": "0.2527",
+      "weather_days": "6816",
+      "weather_matching_share": "0.081",
+      "enrichment": "3.121",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Any snowfall (3-day sum)",
+      "threshold": "0.0",
+      "condition": ">",
+      "damage_group": "Damaged Pole",
+      "damage_grid_dates": "64",
+      "matching_damage_grid_dates": "17",
+      "matching_share": "0.2656",
+      "weather_days": "6816",
+      "weather_matching_share": "0.081",
+      "enrichment": "3.28",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Any snowfall (3-day sum)",
+      "threshold": "0.0",
+      "condition": ">",
+      "damage_group": "Damaged Switch",
+      "damage_grid_dates": "47",
+      "matching_damage_grid_dates": "15",
+      "matching_share": "0.3191",
+      "weather_days": "6816",
+      "weather_matching_share": "0.081",
+      "enrichment": "3.941",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Any snowfall (3-day sum)",
+      "threshold": "0.0",
+      "condition": ">",
+      "damage_group": "Damaged Equipment",
+      "damage_grid_dates": "31",
+      "matching_damage_grid_dates": "8",
+      "matching_share": "0.2581",
+      "weather_days": "6816",
+      "weather_matching_share": "0.081",
+      "enrichment": "3.187",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Any snowfall (3-day sum)",
+      "threshold": "0.0",
+      "condition": ">",
+      "damage_group": "Damaged Light",
+      "damage_grid_dates": "4",
+      "matching_damage_grid_dates": "2",
+      "matching_share": "0.5",
+      "weather_days": "6816",
+      "weather_matching_share": "0.081",
+      "enrichment": "6.174",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Freezing (3-day min)",
+      "threshold": "32.0",
+      "condition": "<=",
+      "damage_group": "all types",
+      "damage_grid_dates": "106",
+      "matching_damage_grid_dates": "47",
+      "matching_share": "0.4434",
+      "weather_days": "6816",
+      "weather_matching_share": "0.2669",
+      "enrichment": "1.661",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Freezing (3-day min)",
+      "threshold": "32.0",
+      "condition": "<=",
+      "damage_group": "Damaged Wire",
+      "damage_grid_dates": "91",
+      "matching_damage_grid_dates": "45",
+      "matching_share": "0.4945",
+      "weather_days": "6816",
+      "weather_matching_share": "0.2669",
+      "enrichment": "1.853",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Freezing (3-day min)",
+      "threshold": "32.0",
+      "condition": "<=",
+      "damage_group": "Damaged Pole",
+      "damage_grid_dates": "64",
+      "matching_damage_grid_dates": "30",
+      "matching_share": "0.4688",
+      "weather_days": "6816",
+      "weather_matching_share": "0.2669",
+      "enrichment": "1.756",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Freezing (3-day min)",
+      "threshold": "32.0",
+      "condition": "<=",
+      "damage_group": "Damaged Switch",
+      "damage_grid_dates": "47",
+      "matching_damage_grid_dates": "25",
+      "matching_share": "0.5319",
+      "weather_days": "6816",
+      "weather_matching_share": "0.2669",
+      "enrichment": "1.993",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Freezing (3-day min)",
+      "threshold": "32.0",
+      "condition": "<=",
+      "damage_group": "Damaged Equipment",
+      "damage_grid_dates": "31",
+      "matching_damage_grid_dates": "18",
+      "matching_share": "0.5806",
+      "weather_days": "6816",
+      "weather_matching_share": "0.2669",
+      "enrichment": "2.176",
+      "interpretation": "descriptive, not outage probability"
+    },
+    {
+      "feature": "Freezing (3-day min)",
+      "threshold": "32.0",
+      "condition": "<=",
+      "damage_group": "Damaged Light",
+      "damage_grid_dates": "4",
+      "matching_damage_grid_dates": "3",
+      "matching_share": "0.75",
+      "weather_days": "6816",
+      "weather_matching_share": "0.2669",
+      "enrichment": "2.81",
+      "interpretation": "descriptive, not outage probability"
+    }
+  ],
+  "limitations": [
+    "Enrichment E(C,d) is descriptive association, not outage probability.",
+    "Only 55 distinct ARCOS report dates; February 2025 cluster dominates.",
+    "ERA5 at four coarse points; not on-site measurements.",
+    "Damage categories are not confirmed customer outage labels."
+  ]
+}

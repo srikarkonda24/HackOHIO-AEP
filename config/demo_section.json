@@ -1,0 +1,115 @@
+{
+  "circuit_id": "0000005",
+  "primary_gis_circuit_id": "0000006",
+  "title": "Roanoke demo \u2014 four reclosers (network feeder 0000005)",
+  "selection_rationale": "No alternate 3\u20135 device cluster places topology-matched reclosers within the geographic extent of GIS primary labeled 0000005 (those 905 segments lie ~15 km north of this equipment). Retaining four topology-validated reclosers with strong dependency overlap for deduplication demos. Local primary lines use GIS circuit_id 0000006 as geographic context only.",
+  "data_integrity": {
+    "network_feeder_id": "0000005",
+    "premises_circuit_in_network_db": "0000005",
+    "gis_equipment_circuit_id": "0000005",
+    "gis_equipment_aep_circui": "CIR6",
+    "local_primary_gis_circuit_id": "0000006",
+    "gis_primary_labeled_0000005_bbox_wgs84": {
+      "min_lng": -79.99583743499994,
+      "min_lat": 37.33178748600005,
+      "max_lng": -79.94941543899995,
+      "max_lat": 37.36109483800004
+    },
+    "explanation": "Supplied shapefiles disagree: reclosers and network.db premises use feeder 0000005; nearby GIS primary segments use circuit_id 0000006; aep_circui CIR6 on equipment aligns with that local primary labeling. 905 primary features labeled 0000005 exist but are geographically disjoint from these reclosers. This is source-data inconsistency, not a join bug."
+  },
+  "bounds_wgs84": {
+    "min_lng": -79.79918790199994,
+    "min_lat": 37.26008776900008,
+    "max_lng": -79.78499830499996,
+    "max_lat": 37.27832066800008
+  },
+  "map": {
+    "min_zoom": 13,
+    "max_zoom": 17,
+    "max_bounds_padding": 0.002
+  },
+  "filter": {
+    "protective_devices": "exact GIS location_n allowlist (topology validated)",
+    "primary_lines": "GIS circuit_id 0000006 within demo bounds (geographic context; not verified electrical connectivity to network feeder)",
+    "damage": "excluded in demo section API mode"
+  },
+  "protective_devices": [
+    {
+      "location_n": "37800281C36078",
+      "device_key": "eo_isolating_eqpt_inst*321305938",
+      "layer": "reclosers",
+      "device_type": "Recloser (Electronic)",
+      "dependent_premises": 2811
+    },
+    {
+      "location_n": "37800257D00037",
+      "device_key": "eo_isolating_eqpt_inst*140852957",
+      "layer": "reclosers",
+      "device_type": "Recloser (Electronic)",
+      "dependent_premises": 1333
+    },
+    {
+      "location_n": "37800282A16020",
+      "device_key": "eo_isolating_eqpt_inst*310730856",
+      "layer": "reclosers",
+      "device_type": "Recloser (Electronic)",
+      "dependent_premises": 907
+    },
+    {
+      "location_n": "37800282A00010",
+      "device_key": "eo_isolating_eqpt_inst*140719724",
+      "layer": "reclosers",
+      "device_type": "Recloser (Hydraulic)",
+      "dependent_premises": 196
+    }
+  ],
+  "dependency_analysis": {
+    "individual_counts": {
+      "37800281C36078": 2811,
+      "37800257D00037": 1333,
+      "37800282A16020": 907,
+      "37800282A00010": 196
+    },
+    "pairwise_overlap": [
+      {
+        "a_location_n": "37800281C36078",
+        "b_location_n": "37800257D00037",
+        "shared_premises": 1333
+      },
+      {
+        "a_location_n": "37800281C36078",
+        "b_location_n": "37800282A16020",
+        "shared_premises": 907
+      },
+      {
+        "a_location_n": "37800281C36078",
+        "b_location_n": "37800282A00010",
+        "shared_premises": 196
+      },
+      {
+        "a_location_n": "37800257D00037",
+        "b_location_n": "37800282A16020",
+        "shared_premises": 0
+      },
+      {
+        "a_location_n": "37800257D00037",
+        "b_location_n": "37800282A00010",
+        "shared_premises": 0
+      },
+      {
+        "a_location_n": "37800282A16020",
+        "b_location_n": "37800282A00010",
+        "shared_premises": 196
+      }
+    ],
+    "union_premises": 2811,
+    "union_premises_outside_map_bounds": 2611
+  },
+  "primary_segments_in_bounds": 173,
+  "primary_segments_labeled_network_circuit_in_bounds": 0,
+  "concerns": [
+    "network.db feeder 0000005 != local GIS primary circuit_id 0000006; lines are not proof of topology.",
+    "GIS primary labeled 0000005 does not overlap this map window; do not draw it here.",
+    "2611 of 2811 union dependency premises fall outside map bounds; API counts remain complete."
+  ]
+}

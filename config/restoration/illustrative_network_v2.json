@@ -1,0 +1,222 @@
+{
+  "network_version": "illustrative_radial_v2_step_restore",
+  "title": "Illustrative Restoration Network (Level 4)",
+  "disclaimer": "Fictional radial topology with labeled illustrative tie-switch assumptions. Not verified AEP GIS or switching authority.",
+  "modeled_customer_group_id": "RES1",
+  "source_node_id": "SRC",
+  "nodes": [
+    { "id": "SRC", "kind": "source" },
+    { "id": "N_MAIN", "kind": "junction" },
+    { "id": "N_BUS", "kind": "junction" },
+    { "id": "N_HOSP", "kind": "junction" },
+    { "id": "N_TRUNK", "kind": "junction" },
+    { "id": "N_R1", "kind": "junction" },
+    { "id": "N_FIRE", "kind": "junction" },
+    { "id": "N_R2", "kind": "junction" },
+    { "id": "HOSPITAL", "kind": "customer_group" },
+    { "id": "FIRE", "kind": "customer_group" },
+    { "id": "RES1", "kind": "customer_group" },
+    { "id": "RES2", "kind": "customer_group" },
+    { "id": "RES3", "kind": "customer_group" }
+  ],
+  "components": [
+    {
+      "id": "A",
+      "label": "Main upstream pole",
+      "node": "N_MAIN",
+      "repair_type": "pole_replacement",
+      "aep_damage_category_proxy": "Damaged Pole"
+    },
+    {
+      "id": "B",
+      "label": "Hospital branch conductor",
+      "node": "N_HOSP",
+      "repair_type": "wire_replacement",
+      "aep_damage_category_proxy": "Damaged Wire"
+    },
+    {
+      "id": "C",
+      "label": "Residential transformer (zone 1)",
+      "node": "N_R1",
+      "repair_type": "transformer_replacement",
+      "aep_damage_category_proxy": "Damaged Equipment"
+    },
+    {
+      "id": "D",
+      "label": "Trunk conductor",
+      "node": "N_TRUNK",
+      "repair_type": "wire_replacement",
+      "aep_damage_category_proxy": "Damaged Wire"
+    },
+    {
+      "id": "E",
+      "label": "Fire branch switchgear",
+      "node": "N_FIRE",
+      "repair_type": "switch_replacement",
+      "aep_damage_category_proxy": "Damaged Switch"
+    },
+    {
+      "id": "F",
+      "label": "Residential transformer (zone 2)",
+      "node": "N_R2",
+      "repair_type": "transformer_replacement",
+      "aep_damage_category_proxy": "Damaged Equipment"
+    },
+    {
+      "id": "G",
+      "label": "Lateral conductor (zone 3)",
+      "node": "N_R2",
+      "repair_type": "wire_replacement",
+      "aep_damage_category_proxy": "Damaged Wire"
+    }
+  ],
+  "switches": [
+    {
+      "id": "S1",
+      "label": "Hospital branch sectionalizer",
+      "initial_state": "closed",
+      "location_node": "N_BUS",
+      "illustrative_only": false
+    },
+    {
+      "id": "S2",
+      "label": "Illustrative hospital tie",
+      "initial_state": "open",
+      "location_node": "N_TRUNK",
+      "illustrative_only": true,
+      "note": "Scenario-only tie; not claiming real AEP backfeed capability."
+    }
+  ],
+  "edges": [
+    { "id": "e_src_main", "from": "SRC", "to": "N_MAIN", "requires_component": "A" },
+    { "id": "e_main_bus", "from": "N_MAIN", "to": "N_BUS", "requires_component": null },
+    {
+      "id": "e_bus_hosp",
+      "from": "N_BUS",
+      "to": "N_HOSP",
+      "requires_component": "B",
+      "requires_switch": "S1",
+      "requires_switch_state": "closed"
+    },
+    { "id": "e_hosp_fac", "from": "N_HOSP", "to": "HOSPITAL", "requires_component": null },
+    {
+      "id": "e_bus_trunk",
+      "from": "N_BUS",
+      "to": "N_TRUNK",
+      "requires_component": "D"
+    },
+    { "id": "e_trunk_r1", "from": "N_TRUNK", "to": "N_R1", "requires_component": "C" },
+    { "id": "e_r1_res1", "from": "N_R1", "to": "RES1", "requires_component": null },
+    { "id": "e_trunk_fire", "from": "N_TRUNK", "to": "N_FIRE", "requires_component": "E" },
+    { "id": "e_fire_fac", "from": "N_FIRE", "to": "FIRE", "requires_component": null },
+    { "id": "e_trunk_r2", "from": "N_TRUNK", "to": "N_R2", "requires_component": "F" },
+    { "id": "e_r2_res2", "from": "N_R2", "to": "RES2", "requires_component": null },
+    { "id": "e_r2_res3", "from": "N_R2", "to": "RES3", "requires_component": "G" },
+    {
+      "id": "e_tie_hosp",
+      "from": "N_TRUNK",
+      "to": "N_HOSP",
+      "requires_component": null,
+      "requires_switch": "S2",
+      "requires_switch_state": "closed",
+      "illustrative_tie": true,
+      "blocked_when_switch": "S1",
+      "blocked_when_switch_state": "closed"
+    }
+  ],
+  "customer_groups": [
+    {
+      "id": "HOSPITAL",
+      "label": "Hospital",
+      "node_id": "HOSPITAL",
+      "priority_tier": 1,
+      "simulated_customer_count": 1,
+      "count_assumption": "Critical facility placeholder"
+    },
+    {
+      "id": "FIRE",
+      "label": "Fire station",
+      "node_id": "FIRE",
+      "priority_tier": 2,
+      "simulated_customer_count": 1,
+      "count_assumption": "Emergency facility placeholder"
+    },
+    {
+      "id": "RES1",
+      "label": "Residential zone 1",
+      "node_id": "RES1",
+      "priority_tier": 3,
+      "simulated_customer_count": 100,
+      "count_assumption": "Hypothetical aggregate"
+    },
+    {
+      "id": "RES2",
+      "label": "Residential zone 2",
+      "node_id": "RES2",
+      "priority_tier": 3,
+      "simulated_customer_count": 90,
+      "count_assumption": "Hypothetical aggregate"
+    },
+    {
+      "id": "RES3",
+      "label": "Residential zone 3",
+      "node_id": "RES3",
+      "priority_tier": 3,
+      "simulated_customer_count": 70,
+      "count_assumption": "Hypothetical aggregate"
+    }
+  ],
+  "switching_actions": [
+    {
+      "id": "OPEN_S1",
+      "action_type": "switching",
+      "switch_id": "S1",
+      "target_state": "open",
+      "duration_hours": 1.5,
+      "description": "Open hospital sectionalizer to isolate faulted branch conductor",
+      "preconditions": {
+        "source_reachable": true,
+        "components_intact": ["A"],
+        "switch_states": { "S1": "closed" }
+      },
+      "groups_may_restore": [],
+      "illustrative_assumption": false
+    },
+    {
+      "id": "CLOSE_S2",
+      "action_type": "switching",
+      "switch_id": "S2",
+      "target_state": "closed",
+      "duration_hours": 2.0,
+      "description": "Close illustrative tie to backfeed hospital from energized trunk",
+      "preconditions": {
+        "source_reachable": true,
+        "components_intact": ["A", "D"],
+        "switch_states": { "S1": "open", "S2": "open" },
+        "damaged_may_include": ["B"]
+      },
+      "groups_may_restore": ["HOSPITAL"],
+      "illustrative_assumption": true
+    },
+    {
+      "id": "CLOSE_S1",
+      "action_type": "switching",
+      "switch_id": "S1",
+      "target_state": "closed",
+      "duration_hours": 1.5,
+      "description": "Reclose sectionalizer after branch repair (normal configuration)",
+      "preconditions": {
+        "components_repaired": ["B"],
+        "switch_states": { "S1": "open" }
+      },
+      "groups_may_restore": ["HOSPITAL"],
+      "illustrative_assumption": false
+    }
+  ],
+  "demo_scenarios": {
+    "step_restoration_showcase": {
+      "damaged": ["B"],
+      "note": "Only hospital wire faulted; tie switching restores hospital before B repair completes."
+    }
+  }
+}

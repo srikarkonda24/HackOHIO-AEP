@@ -1,0 +1,56 @@
+{
+  "selected_circuit_id": "0000005",
+  "title": "Roanoke study feeder 0000005",
+  "selection_rationale": "All 2,811 premises in the verified demo recloser dependency set use premises.circuit_id 0000005; this circuit has the strongest mix of primary segments, protective devices, and topology joins in the Roanoke bbox.",
+  "filter": {
+    "infrastructure": "circuit_id or aep_circui equals selected circuit in GIS properties_json",
+    "damage": "geographic bbox around circuit primary geometry (ARCOS Circuit field uses labels like CIR27, not circuit_id)"
+  },
+  "bounds_wgs84": {
+    "min_lng": -80.00421349099993,
+    "min_lat": 37.18067416700004,
+    "max_lng": -79.70383887599995,
+    "max_lat": 37.369094838000045
+  },
+  "counts": {
+    "primary_segments": 905,
+    "reclosers": 30,
+    "switches": 23,
+    "fuses": 481,
+    "transformers": 1851,
+    "topology_matched_equipment": 2232,
+    "premises_in_network_db": 3527,
+    "demo_recloser_dependent_premises": 2811,
+    "arcos_damage_geographic_in_bounds": 598,
+    "primary_segments_in_circuit": 905
+  },
+  "candidates_compared": [
+    {
+      "circuit_id": "0000005",
+      "primary_segments": 905,
+      "reclosers": 30,
+      "topology_matched_equipment": 2232,
+      "premises_in_network_db": 3527,
+      "includes_demo_device_circuit": true,
+      "geographic_span_deg": 0.4564
+    },
+    {
+      "circuit_id": "0000114",
+      "primary_segments": 1938,
+      "reclosers": 13,
+      "topology_matched_equipment": 1055,
+      "premises_in_network_db": 1890,
+      "includes_demo_device_circuit": false,
+      "geographic_span_deg": 0.202
+    },
+    {
+      "circuit_id": "0000060",
+      "primary_segments": 2044,
+      "reclosers": 15,
+      "topology_matched_equipment": 847,
+      "premises_in_network_db": 1233,
+      "includes_demo_device_circuit": false,
+      "geographic_span_deg": 0.2646
+    }
+  ]
+}
